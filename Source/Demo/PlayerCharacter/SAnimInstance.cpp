@@ -8,7 +8,6 @@
 
 
 USAnimInstance::USAnimInstance(const FObjectInitializer& ObjectInitializer)
-	: Super(ObjectInitializer)
 {
 }
 
@@ -21,11 +20,11 @@ void USAnimInstance::InitializeWithAbilitySystem(UAbilitySystemComponent* ASC)
 
 void USAnimInstance::NativeInitializeAnimation()
 {
-	Super::NativeInitializeAnimation();
-
-	if (AActor* OwningActor = GetOwningActor())
+	AActor* OwningActor = GetOwningActor();
+	if (OwningActor)
 	{
-		if (UAbilitySystemComponent* ASC = UAbilitySystemGlobals::GetAbilitySystemComponentFromActor(OwningActor))
+		UAbilitySystemComponent* ASC = UAbilitySystemGlobals::GetAbilitySystemComponentFromActor(OwningActor);
+		if (ASC)
 		{
 			InitializeWithAbilitySystem(ASC);
 		}

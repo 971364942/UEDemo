@@ -39,7 +39,7 @@ public:
 	TArray<TSubclassOf<UGameplayAbility>> MyAbilities;
 
 	UPROPERTY()
-	class USAttributeSet* AttributeSet;
+	class USPlayerAttributeSet* AttributeSet;
 
 	virtual void OnHealthChanged(AActor* SInstigator);
 

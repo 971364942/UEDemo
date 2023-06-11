@@ -4,8 +4,9 @@
 #include "SInteractableActorComponent.h"
 
 #include "SInteractableInterface.h"
-#include "SWorldUserWidget.h"
+
 #include "Blueprint/UserWidget.h"
+#include "Demo/UI/SWorldUserWidget.h"
 
 
 // Sets default values for this component's properties

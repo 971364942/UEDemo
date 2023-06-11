@@ -3,7 +3,8 @@
 
 #include "SDamageGE_ExecutionCalculation.h"
 
-#include "Demo/PlayerCharacter/SAttributeSet.h"
+#include "SAttributeSet.h"
+
 
 struct SDamageStatics
 {

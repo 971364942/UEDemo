@@ -5,7 +5,7 @@
 
 #include "AbilitySystemComponent.h"
 #include "GameplayAbilitySpec.h"
-#include "../PlayerCharacter/SAttributeSet.h"
+#include "..\PlayerCharacter\SPlayerAttributeSet.h"
 
 
 // Sets default values
@@ -19,7 +19,7 @@ ASTargetActor::ASTargetActor()
 
 	AbilitySystemComp = CreateDefaultSubobject<UAbilitySystemComponent>("AbilitySystemComp");
 
-	AttributeSet = CreateDefaultSubobject<USAttributeSet>("AttributeSet");
+	AttributeSet = CreateDefaultSubobject<USPlayerAttributeSet>("AttributeSet");
 }
 
 // Called when the game starts or when spawned

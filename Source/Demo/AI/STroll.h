@@ -15,12 +15,26 @@ class DEMO_API ASTroll : public ACharacter, public IAbilitySystemInterface
 	GENERATED_BODY()
 
 public:
+
 	// Sets default values for this character's properties
 	ASTroll();
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = GameplayAbilities, meta = (AllowPrivateAccess = "true"))
+	UAbilitySystemComponent* AbilitySystem;
+
+	UPROPERTY()
+	class USAIAttributeSet* AttributeSet;
+
+	UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	void PostInitializeComponents() override;
+
+	UPROPERTY(VisibleDefaultsOnly)
+	class UPawnSensingComponent* PawnSensingComp;
 
 public:	
 	// Called every frame
@@ -29,12 +43,12 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = GameplayAbilities, meta = (AllowPrivateAccess = "true"))
-	UAbilitySystemComponent* AbilitySystem;
+	void OnHealthChanged(AActor* Actor);
 
-	UPROPERTY()
-	class USAIAttributeSet* AttributeSet;
+	UFUNCTION(BlueprintImplementableEvent)
+	void K2_OnHealthChanged(AActor* Actor);
 
-	UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+	UFUNCTION()
+	void OnPawnSee(APawn* Pawn);
 
 };

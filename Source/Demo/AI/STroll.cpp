@@ -5,6 +5,10 @@
 
 #include "AbilitySystemComponent.h"
 #include "SAIAttributeSet.h"
+#include "SAIController.h"
+#include "BehaviorTree/BlackboardComponent.h"
+#include "Demo/PlayerCharacter/DemoCharacter.h"
+#include "Perception/PawnSensingComponent.h"
 
 // Sets default values
 ASTroll::ASTroll()
@@ -16,13 +20,24 @@ ASTroll::ASTroll()
 
 	AttributeSet = CreateDefaultSubobject<USAIAttributeSet>("AttributeSet");
 
-
+	PawnSensingComp = CreateDefaultSubobject<UPawnSensingComponent>("PawnSensingComp");
+	
 }
 
 // Called when the game starts or when spawned
 void ASTroll::BeginPlay()
 {
 	Super::BeginPlay();
+
+	AttributeSet->OnHealthChanged.AddUObject(this, &ASTroll::OnHealthChanged);
+	
+}
+
+void ASTroll::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+
+	PawnSensingComp->OnSeePawn.AddDynamic(this, &ASTroll::OnPawnSee);
 	
 }
 
@@ -38,6 +53,35 @@ void ASTroll::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+void ASTroll::OnHealthChanged(AActor* Actor)
+{
+	K2_OnHealthChanged(Actor);
+}
+
+void ASTroll::OnPawnSee(APawn* Pawn)
+{
+	ADemoCharacter* PlayerActor = Cast<ADemoCharacter>(Pawn);
+	
+	if (PlayerActor)
+	{
+		ASAIController* AIController = Cast<ASAIController>(GetController());
+		if (AIController)
+		{
+			UBlackboardComponent* BlackboardComp = AIController->GetBlackboardComponent();
+			if (BlackboardComp)
+			{
+				BlackboardComp->SetValueAsObject("PlayerActor", PlayerActor);
+
+				if (BlackboardComp->GetValueAsVector("FindPlayerLocation") == FVector(0))
+				{
+					FVector FindPlayerLocation = GetActorLocation();
+					BlackboardComp->SetValueAsVector("FindPlayerLocation", FindPlayerLocation);
+				}
+			}
+		}
+	}
 }
 
 UAbilitySystemComponent* ASTroll::GetAbilitySystemComponent() const

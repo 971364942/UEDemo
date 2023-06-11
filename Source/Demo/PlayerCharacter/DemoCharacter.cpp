@@ -11,7 +11,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
-#include "SAttributeSet.h"
+#include "SPlayerAttributeSet.h"
 #include "Components/BoxComponent.h"
 #include "../Interactable/SInteractableActorComponent.h"
 #include "Kismet/KismetMathLibrary.h"
@@ -68,7 +68,7 @@ ADemoCharacter::ADemoCharacter()
 	RightHandCollisionBoxComp = CreateDefaultSubobject<UBoxComponent>(TEXT("RightHandCollisionBoxComp"));
 
 	AbilitySystem = CreateDefaultSubobject<UAbilitySystemComponent>(TEXT("AbilitySystem"));
-	AttributeSet = CreateDefaultSubobject<USAttributeSet>("AttributeSet");
+	AttributeSet = CreateDefaultSubobject<USPlayerAttributeSet>("AttributeSet");
 
 	InteractableActorComp = CreateDefaultSubobject<USInteractableActorComponent>("InteractableActorComp");
 	
@@ -201,7 +201,7 @@ void ADemoCharacter::NormalAttack_Implementation()
 		
 		TArray<AActor*> ActorsToIgnore;
 		
-		bool TraceHit = UKismetSystemLibrary::SphereTraceMultiForObjects(this, GetActorLocation(), GetActorLocation(), AttackRange, ObjectQueryParams, false, ActorsToIgnore, EDrawDebugTrace::ForDuration, HitResults, true);
+		bool TraceHit = UKismetSystemLibrary::SphereTraceMultiForObjects(this, GetActorLocation(), GetActorLocation(), AttackRange, ObjectQueryParams, false, ActorsToIgnore, EDrawDebugTrace::None, HitResults, true);
 
 		HitResults.Sort([this](const FHitResult&A, const FHitResult&B)
 		{
