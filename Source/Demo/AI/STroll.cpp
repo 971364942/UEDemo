@@ -72,10 +72,10 @@ void ASTroll::OnPawnSee(APawn* Pawn)
 			UBlackboardComponent* BlackboardComp = AIController->GetBlackboardComponent();
 			if (BlackboardComp)
 			{
-				BlackboardComp->SetValueAsObject("PlayerActor", PlayerActor);
-
 				if (BlackboardComp->GetValueAsVector("FindPlayerLocation") == FVector(0))
 				{
+					BlackboardComp->SetValueAsObject("PlayerActor", PlayerActor);
+					
 					FVector FindPlayerLocation = GetActorLocation();
 					BlackboardComp->SetValueAsVector("FindPlayerLocation", FindPlayerLocation);
 				}
