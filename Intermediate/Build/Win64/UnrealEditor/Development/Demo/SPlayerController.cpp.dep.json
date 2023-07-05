@@ -1,0 +1,16 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\ue\\demo\\source\\demo\\private\\splayercontroller.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\ue\\demo\\intermediate\\build\\win64\\demoeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\ue\\demo\\intermediate\\build\\win64\\unrealeditor\\development\\demo\\definitions.demo.h",
+            "c:\\ue\\demo\\source\\demo\\public\\splayercontroller.h",
+            "c:\\ue\\demo\\intermediate\\build\\win64\\unrealeditor\\inc\\demo\\uht\\splayercontroller.generated.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\slate\\public\\framework\\application\\navigationconfig.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

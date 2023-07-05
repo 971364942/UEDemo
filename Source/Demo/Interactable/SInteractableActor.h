@@ -23,7 +23,7 @@ protected:
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
 	class UStaticMeshComponent* StaticMeshComp;
 
-	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category="InteractText")
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="InteractText")
 	FText InteractText;
 
 public:	

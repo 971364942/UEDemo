@@ -27,9 +27,12 @@ public:
 	UFUNCTION(Server, Reliable)
 	void ServerInteract(AActor* InFocus);
 
+	UFUNCTION(Server, Reliable)
+	void ServerLostFocusedActor(AActor* InFocus);
+
 protected:
 
-	UPROPERTY(EditDefaultsOnly, Category="UI")
+	UPROPERTY(BlueprintReadWrite,EditDefaultsOnly, Category="UI")
 	TSubclassOf<USWorldUserWidget> DefaultWidgetClass;
 	
 	UPROPERTY(EditDefaultsOnly, Category="Trace")
@@ -39,12 +42,15 @@ protected:
 	int TraceDistance;
 
 	UPROPERTY(EditDefaultsOnly, Category="Trace")
-	TEnumAsByte<ECollisionChannel> CollisionChannel;
+	TArray<TEnumAsByte<ECollisionChannel>> CollisionChannelArray;
 	
 	UPROPERTY()
 	AActor* FocusedActor;
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite)
 	USWorldUserWidget* DefaultWidgetInstance;
+
+	UPROPERTY()
+	AActor* LastTickFocusedActor;
 		
 };

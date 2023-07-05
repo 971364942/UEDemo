@@ -26,10 +26,14 @@ public:
 	UFUNCTION(BlueprintNativeEvent)
 	void OnActorLoaded();
 
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category="InteractText")
 	FText GetInteractText(APawn* InstigatorPawn);
 	
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void Interact(APawn* InstigatorPawn);
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	void LostFocusedActor(APawn* InstigatorPawn);
+
 	
 };

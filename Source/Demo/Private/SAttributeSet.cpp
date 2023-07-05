@@ -70,3 +70,8 @@ void USAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackD
 		OnHealthChanged.Broadcast(Data.EffectSpec.GetContext().GetInstigator());
 	}
 }
+
+void USAttributeSet::SetAttackMultiplierInternal(float AttackMultiplierValue)
+{
+	this->SetAttackMultiplier(AttackMultiplierValue);
+}

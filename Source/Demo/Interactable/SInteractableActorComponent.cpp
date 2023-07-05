@@ -20,7 +20,8 @@ USInteractableActorComponent::USInteractableActorComponent()
 
 	TraceDistance = 200;
 
-	CollisionChannel = ECC_WorldDynamic;
+	CollisionChannelArray.Add(ECC_WorldDynamic);
+	CollisionChannelArray.Add(ECC_GameTraceChannel2);
 }
 
 // Called every frame
@@ -53,23 +54,42 @@ void USInteractableActorComponent::FindBestInteractable()
 	Start += EyesRotation.Vector() * 50;
 
 	FCollisionObjectQueryParams ObjectQueryParams;
-	ObjectQueryParams.AddObjectTypesToQuery(CollisionChannel);
+
+	if (!CollisionChannelArray.IsEmpty())
+	{
+		for (auto CollisionChannel : CollisionChannelArray)
+		{
+			ObjectQueryParams.AddObjectTypesToQuery(CollisionChannel);
+		}
+	}
+	
 	ObjectQueryParams.RemoveObjectTypesToQuery(ECC_Pawn);
 
 	FCollisionShape Shape;
 	Shape.SetSphere(TraceRadius);
 
 	bool bBlockingHit = GetWorld()->SweepSingleByObjectType(Hit, Start, End, FQuat::Identity, ObjectQueryParams, Shape);
-
+	
+	if (FocusedActor)
+	{
+		LastTickFocusedActor = FocusedActor;
+	}
+	
 	FocusedActor = nullptr;
-
+	
 	AActor* HitActor = Hit.GetActor();
 	if(HitActor)
 	{
 		if(HitActor->Implements<USInteractableInterface>())
 		{
 			FocusedActor = HitActor;
+
 		}
+	}
+	
+	if (LastTickFocusedActor && FocusedActor != LastTickFocusedActor)
+	{
+		ServerLostFocusedActor(LastTickFocusedActor);
 	}
 
 	if (FocusedActor)
@@ -98,9 +118,9 @@ void USInteractableActorComponent::FindBestInteractable()
 	}
 
 	
-	/*FColor LineColor = bBlockingHit ? FColor::Green : FColor::Red;
-	DrawDebugSphere(GetWorld(), Hit.ImpactPoint, TraceRadius, 32, LineColor, false, 2.0f);
-	DrawDebugLine(GetWorld(), Start, End, LineColor, false, 2.0f, 0, 2.0f);*/
+	// FColor LineColor = bBlockingHit ? FColor::Green : FColor::Red;
+	// DrawDebugSphere(GetWorld(), Hit.ImpactPoint, TraceRadius, 32, LineColor, false, 2.0f);
+	// DrawDebugLine(GetWorld(), Start, End, LineColor, false, 2.0f, 0, 2.0f);
 }
 
 void USInteractableActorComponent::PrimaryInteract()
@@ -116,5 +136,20 @@ void USInteractableActorComponent::ServerInteract_Implementation(AActor* InFocus
 		return;
 	}
 	ISInteractableInterface::Execute_Interact(InFocus, Cast<APawn>(GetOwner()));
+
+	if (DefaultWidgetInstance)
+	{
+		DefaultWidgetInstance->RemoveFromParent();
+	}
+}
+
+void USInteractableActorComponent::ServerLostFocusedActor_Implementation(AActor* InFocus)
+{
+	ISInteractableInterface::Execute_LostFocusedActor(InFocus, Cast<APawn>(GetOwner()));
+
+	if (DefaultWidgetInstance)
+	{
+		DefaultWidgetInstance->RemoveFromParent();
+	}
 }
 

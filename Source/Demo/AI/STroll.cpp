@@ -15,22 +15,26 @@ ASTroll::ASTroll()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	
+
 	AbilitySystem = CreateDefaultSubobject<UAbilitySystemComponent>("AbilitySystem");
 
 	AttributeSet = CreateDefaultSubobject<USAIAttributeSet>("AttributeSet");
 
 	PawnSensingComp = CreateDefaultSubobject<UPawnSensingComponent>("PawnSensingComp");
-	
+
+}
+
+UAbilitySystemComponent* ASTroll::GetAbilitySystemComponent() const
+{
+	return AbilitySystem;
 }
 
 // Called when the game starts or when spawned
 void ASTroll::BeginPlay()
 {
 	Super::BeginPlay();
-
-	AttributeSet->OnHealthChanged.AddUObject(this, &ASTroll::OnHealthChanged);
 	
+	AttributeSet->OnHealthChanged.AddUObject(this, &ASTroll::OnHealthChanged);
 }
 
 void ASTroll::PostInitializeComponents()
@@ -38,7 +42,6 @@ void ASTroll::PostInitializeComponents()
 	Super::PostInitializeComponents();
 
 	PawnSensingComp->OnSeePawn.AddDynamic(this, &ASTroll::OnPawnSee);
-	
 }
 
 // Called every frame
@@ -58,6 +61,8 @@ void ASTroll::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 void ASTroll::OnHealthChanged(AActor* Actor)
 {
 	K2_OnHealthChanged(Actor);
+
+	OnPawnSee(Cast<APawn>(Actor));
 }
 
 void ASTroll::OnPawnSee(APawn* Pawn)
@@ -82,10 +87,5 @@ void ASTroll::OnPawnSee(APawn* Pawn)
 			}
 		}
 	}
-}
-
-UAbilitySystemComponent* ASTroll::GetAbilitySystemComponent() const
-{
-	return AbilitySystem;
 }
 

@@ -51,6 +51,17 @@ class ADemoCharacter : public ACharacter, public IAbilitySystemInterface
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	class UInputAction* BlockAction;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	class UInputAction* PrimaryInteract;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	class UInputAction* SecondaryInteract;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	class UInputAction* FunctionKey;
+	
+
+
 public:
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = GameplayAbilities, meta = (AllowPrivateAccess = "true"))
@@ -112,6 +123,11 @@ protected:
 	void Block();
 	void StopBlock();
 
+	void PrimaryInteractAction();
+	void SecondaryInteractAction();
+
+	void Function();
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="GA")
 	TSubclassOf<UGameplayAbility> GA_Jump;
 
@@ -133,7 +149,6 @@ protected:
 	class UBoxComponent* TimeDilationScopeBoxComp;
 
 protected:
-
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	

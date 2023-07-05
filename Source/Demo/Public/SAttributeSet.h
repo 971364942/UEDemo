@@ -65,5 +65,8 @@ public:
 	void OnRep_AttackMultiplier(const FGameplayAttributeData& OldValue);
 		
 	FOnValueChanged OnHealthChanged;
+
+	UFUNCTION(BlueprintCallable, Category="Attribute")
+	void SetAttackMultiplierInternal(float AttackMultiplierValue);
 	
 };

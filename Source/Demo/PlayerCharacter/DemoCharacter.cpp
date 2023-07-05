@@ -145,8 +145,11 @@ void ADemoCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInpu
 		EnhancedInputComponent->BindAction(BlockAction, ETriggerEvent::Started, this, &ADemoCharacter::Block);
 		EnhancedInputComponent->BindAction(BlockAction, ETriggerEvent::Completed, this, &ADemoCharacter::StopBlock);
 
-	}
+		EnhancedInputComponent->BindAction(PrimaryInteract, ETriggerEvent::Started, this, &ADemoCharacter::PrimaryInteractAction);
+		EnhancedInputComponent->BindAction(SecondaryInteract, ETriggerEvent::Started, this, &ADemoCharacter::SecondaryInteractAction);
 
+		EnhancedInputComponent->BindAction(FunctionKey, ETriggerEvent::Started, this, &ADemoCharacter::Function);
+	}
 }
 
 void ADemoCharacter::Move(const FInputActionValue& Value)
@@ -274,6 +277,20 @@ void ADemoCharacter::StopBlock()
 			AbilitySystem->TryActivateAbilityByClass(GA_StopBlock);
 		}
 	}
+}
+
+void ADemoCharacter::PrimaryInteractAction()
+{
+	InteractableActorComp->PrimaryInteract();
+}
+
+void ADemoCharacter::SecondaryInteractAction()
+{
+	 
+}
+
+void ADemoCharacter::Function()
+{
 }
 
 
