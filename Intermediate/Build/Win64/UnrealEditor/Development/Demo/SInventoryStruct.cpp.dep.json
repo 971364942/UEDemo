@@ -1,0 +1,24 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\ue\\demo\\source\\demo\\inventory\\sinventorystruct.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\ue\\demo\\intermediate\\build\\win64\\demoeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\ue\\demo\\intermediate\\build\\win64\\unrealeditor\\development\\demo\\definitions.demo.h",
+            "c:\\ue\\demo\\source\\demo\\inventory\\sinventorystruct.h",
+            "c:\\ue\\demo\\source\\demo\\inventory\\sinventoryenum.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\engine\\classes\\engine\\userdefinedenum.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\userdefinedenum.generated.h",
+            "c:\\ue\\demo\\intermediate\\build\\win64\\unrealeditor\\inc\\demo\\uht\\sinventoryenum.generated.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\engine\\classes\\engine\\datatable.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\engine\\public\\datatableutils.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\datatable.generated.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\engine\\classes\\engine\\userdefinedstruct.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\userdefinedstruct.generated.h",
+            "c:\\ue\\demo\\intermediate\\build\\win64\\unrealeditor\\inc\\demo\\uht\\sinventorystruct.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
