@@ -29,6 +29,7 @@ public:
 
 	UFUNCTION(Server, Reliable)
 	void ServerLostFocusedActor(AActor* InFocus);
+	
 
 protected:
 

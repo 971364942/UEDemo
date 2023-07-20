@@ -28,3 +28,8 @@ void USGameplayAbility::ApplyCooldown(const FGameplayAbilitySpecHandle Handle, c
 		ApplyGameplayEffectSpecToOwner(Handle, ActorInfo, ActivationInfo, SpecHandle);
 	}
 }
+
+UGameplayEffect* USGameplayAbility::GetCostGameplayEffect() const
+{
+	return Super::GetCostGameplayEffect();
+}

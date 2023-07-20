@@ -55,14 +55,18 @@ void ASTroll::Tick(float DeltaTime)
 void ASTroll::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
 }
 
-void ASTroll::OnHealthChanged(AActor* Actor)
+void ASTroll::OnHealthChanged(AActor* Actor, float HealthChangeValue)
 {
 	K2_OnHealthChanged(Actor);
 
 	OnPawnSee(Cast<APawn>(Actor));
+	
+	if (AttributeSet->GetHealth() == 0 && HealthChangeValue < 0)
+	{
+		TrollDeath();
+	}
 }
 
 void ASTroll::OnPawnSee(APawn* Pawn)
@@ -86,6 +90,18 @@ void ASTroll::OnPawnSee(APawn* Pawn)
 				}
 			}
 		}
+	}
+}
+
+void ASTroll::TrollDeath()
+{
+	K2_TrollDeath();
+	
+	ASAIController* TrollController = Cast<ASAIController>(GetController());
+
+	if (TrollController)
+	{
+		TrollController->Destroy();
 	}
 }
 

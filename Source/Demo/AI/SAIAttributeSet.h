@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "SAttributeSet.h"
+#include "Demo/GameplayAbility/SAttributeSet.h"
 #include "SAIAttributeSet.generated.h"
 
 /**

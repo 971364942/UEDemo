@@ -95,7 +95,7 @@ template<> DEMO_API UClass* StaticClass<class USInventoryEnum>();
 #define CURRENT_FILE_ID FID_ue_Demo_Source_Demo_Inventory_SInventoryEnum_h
 
 
-#define FOREACH_ENUM_EITEMTYPE(op) \
+#define FOREACH_ENUM_ESITEMTYPE(op) \
 	op(Weapon) \
 	op(Armor) \
 	op(Consumable) \

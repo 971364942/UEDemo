@@ -9,7 +9,8 @@
 
 USPlayerAttributeSet::USPlayerAttributeSet():
 	Physical(200.0f),
-	MaxPhysical(200.0f)
+	MaxPhysical(200.0f),
+	MoveSeep(500.0f)
 {
 	
 }
@@ -32,13 +33,20 @@ void USPlayerAttributeSet::OnRep_MaxPhysical(const FGameplayAttributeData& OldVa
 	GAMEPLAYATTRIBUTE_REPNOTIFY(USPlayerAttributeSet, MaxHealth, OldValue);
 }
 
+void USPlayerAttributeSet::OnRep_MoveSeep(const FGameplayAttributeData& OldValue)
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USPlayerAttributeSet, MoveSeep, OldValue);
+}
+
 void USPlayerAttributeSet::PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue)
 {
+	Super::PreAttributeChange(Attribute, NewValue);
+	
 	if (Attribute == GetPhysicalAttribute())
 	{
 		NewValue = FMath::Clamp(NewValue, 0.0f, GetMaxPhysical());
+		//UE_LOG(LogTemp, Warning, TEXT("%f, %f, %f"), Physical.GetBaseValue(), Physical.GetCurrentValue(), NewValue);
 	}
-	
 }
 
 void USPlayerAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data)
@@ -47,7 +55,9 @@ void USPlayerAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCal
 
 	if (Data.EvaluatedData.Attribute == GetPhysicalAttribute())
 	{
-		OnPhysicalChanged.Broadcast(GetOwningActor());
+		SetPhysical(FMath::Clamp(GetPhysical(), 0.0f, GetMaxPhysical()));
+		
+		OnPhysicalChanged.Broadcast(GetOwningActor(), Data.EvaluatedData.Magnitude);
 	}
 	
 	/*ASTargetActor* TargetCharacter = nullptr;

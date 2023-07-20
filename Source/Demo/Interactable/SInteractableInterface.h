@@ -34,6 +34,5 @@ public:
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void LostFocusedActor(APawn* InstigatorPawn);
-
 	
 };

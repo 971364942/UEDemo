@@ -33,20 +33,25 @@ protected:
 	UPROPERTY(VisibleDefaultsOnly)
 	class UPawnSensingComponent* PawnSensingComp;
 
-
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-	void OnHealthChanged(AActor* Actor);
+	
+	void OnHealthChanged(AActor* Actor, float HealthChangeValue);
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void K2_OnHealthChanged(AActor* Actor);
 
 	UFUNCTION()
 	void OnPawnSee(APawn* Pawn);
+
+	UFUNCTION()
+	void TrollDeath();
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void K2_TrollDeath();
 
 };

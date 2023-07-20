@@ -59,7 +59,7 @@ UAbilitySystemComponent* ASTargetActor::GetAbilitySystemComponent() const
 	return AbilitySystemComp;
 }
 
-void ASTargetActor::OnHealthChanged(AActor* SInstigator)
+void ASTargetActor::OnHealthChanged(AActor* SInstigator, float HealthChangeValue)
 {
 	K2_OnHealthChanged(SInstigator);
 }

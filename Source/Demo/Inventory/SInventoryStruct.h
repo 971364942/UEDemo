@@ -9,11 +9,11 @@
 #include "SInventoryStruct.generated.h"
 
 USTRUCT(BlueprintType)
-struct FItem
+struct FSItem : public FTableRowBase
 {
 	GENERATED_BODY()
 
-	FItem();
+	FSItem();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int ID;
@@ -25,49 +25,60 @@ struct FItem
 	FString Description;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	UTexture2D* Icon;
+	UTexture2D* ItemIcon;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TEnumAsByte<EItemType> ItemType;
+	TEnumAsByte<ESItemType> ItemType;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UStaticMesh* ItemMesh;
+	
+	explicit operator bool() const
+	{
+		return ID != 0;
+	}
 	
 };
 
 USTRUCT(BlueprintType)
-struct FInventoryItem
+struct FSInventoryItem : public FTableRowBase
 {
 	GENERATED_BODY()
 
-	FInventoryItem();
+	FSInventoryItem();
 
+	//物品ID
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int ItemID;
 
+	//物品数量
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int Quantity;
-
+	
+	//物品所在位置
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int InventoryIndex;
 
 };
 
 USTRUCT(BlueprintType)
-struct FInventory : public FTableRowBase
+struct FSInventory
 {
 	GENERATED_BODY()
 
-	FInventory();
+	FSInventory();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<FInventoryItem> Weapon;
+	TArray<FSInventoryItem> Weapon;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<FInventoryItem> Armor;
+	TArray<FSInventoryItem> Armor;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<FInventoryItem> Consumable;
+	TArray<FSInventoryItem> Consumable;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<FInventoryItem> Material;
+	TArray<FSInventoryItem> Material;
 	
 };
 

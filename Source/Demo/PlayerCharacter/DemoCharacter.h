@@ -11,6 +11,8 @@
 
 class UAbilitySystemComponent;
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnInput);
+
 
 UCLASS(config=Game)
 class ADemoCharacter : public ACharacter, public IAbilitySystemInterface
@@ -60,6 +62,9 @@ class ADemoCharacter : public ACharacter, public IAbilitySystemInterface
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	class UInputAction* FunctionKey;
 	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	class UInputAction* DodgeAction;
+	
 
 
 public:
@@ -75,27 +80,36 @@ public:
 	UPROPERTY()
 	class USPlayerAttributeSet* AttributeSet;
 	
-	void OnHealthChanged(AActor* SInstigator);
+	void OnHealthChanged(AActor* SInstigator, float ChangeHealth);
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void K2_OnHealthChanged(AActor* K2_Instigator);
 
-	void OnPhysicalChanged();
+	void OnPhysicalChanged(AActor* SInstigator, float ChangePhysical);
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void K2_OnPhysicalChanged();
 
 	UFUNCTION(BlueprintCallable)
 	void SetAttackMultiplier(float AttackMultiplier);
+	
+	UPROPERTY()
+	FOnInput OnPrimaryInteract;
 
 public:
 	ADemoCharacter();
-	
+
+	virtual void Tick(float DeltaSeconds) override;
+
+	virtual void Falling() override;
+
+	virtual void Landed(const FHitResult& Hit) override;
 
 protected:
 
 	/** Called for movement input */
 	void Move(const FInputActionValue& Value);
+	void StopMove();
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
@@ -128,6 +142,10 @@ protected:
 
 	void Function();
 
+	void Dodge();
+
+	void OnMoveSpeedAttributeChanged(const FOnAttributeChangeData& Data);
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="GA")
 	TSubclassOf<UGameplayAbility> GA_Jump;
 
@@ -138,6 +156,9 @@ protected:
 	TSubclassOf<UGameplayAbility> GA_Block;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="GA")
 	TSubclassOf<UGameplayAbility> GA_StopBlock;
+	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="GA")
+	TSubclassOf<UGameplayAbility> GA_Dodge;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	class UBoxComponent* LeftHandCollisionBoxComp;

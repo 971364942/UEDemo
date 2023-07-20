@@ -41,7 +41,7 @@ public:
 	UPROPERTY()
 	class USPlayerAttributeSet* AttributeSet;
 
-	virtual void OnHealthChanged(AActor* SInstigator);
+	virtual void OnHealthChanged(AActor* SInstigator, float HealthChangeValue);
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void K2_OnHealthChanged(AActor* K2_Instigator);

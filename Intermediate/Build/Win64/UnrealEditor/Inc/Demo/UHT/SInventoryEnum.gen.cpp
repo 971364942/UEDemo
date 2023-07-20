@@ -11,24 +11,24 @@ void EmptyLinkFunctionForGeneratedCodeSInventoryEnum() {}
 // Cross Module References
 	DEMO_API UClass* Z_Construct_UClass_USInventoryEnum();
 	DEMO_API UClass* Z_Construct_UClass_USInventoryEnum_NoRegister();
-	DEMO_API UEnum* Z_Construct_UEnum_Demo_EItemType();
+	DEMO_API UEnum* Z_Construct_UEnum_Demo_ESItemType();
 	ENGINE_API UClass* Z_Construct_UClass_UUserDefinedEnum();
 	UPackage* Z_Construct_UPackage__Script_Demo();
 // End Cross Module References
-	static FEnumRegistrationInfo Z_Registration_Info_UEnum_EItemType;
-	static UEnum* EItemType_StaticEnum()
+	static FEnumRegistrationInfo Z_Registration_Info_UEnum_ESItemType;
+	static UEnum* ESItemType_StaticEnum()
 	{
-		if (!Z_Registration_Info_UEnum_EItemType.OuterSingleton)
+		if (!Z_Registration_Info_UEnum_ESItemType.OuterSingleton)
 		{
-			Z_Registration_Info_UEnum_EItemType.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_Demo_EItemType, Z_Construct_UPackage__Script_Demo(), TEXT("EItemType"));
+			Z_Registration_Info_UEnum_ESItemType.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_Demo_ESItemType, Z_Construct_UPackage__Script_Demo(), TEXT("ESItemType"));
 		}
-		return Z_Registration_Info_UEnum_EItemType.OuterSingleton;
+		return Z_Registration_Info_UEnum_ESItemType.OuterSingleton;
 	}
-	template<> DEMO_API UEnum* StaticEnum<EItemType>()
+	template<> DEMO_API UEnum* StaticEnum<ESItemType>()
 	{
-		return EItemType_StaticEnum();
+		return ESItemType_StaticEnum();
 	}
-	struct Z_Construct_UEnum_Demo_EItemType_Statics
+	struct Z_Construct_UEnum_Demo_ESItemType_Statics
 	{
 		static const UECodeGen_Private::FEnumeratorParam Enumerators[];
 #if WITH_METADATA
@@ -36,14 +36,14 @@ void EmptyLinkFunctionForGeneratedCodeSInventoryEnum() {}
 #endif
 		static const UECodeGen_Private::FEnumParams EnumParams;
 	};
-	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_Demo_EItemType_Statics::Enumerators[] = {
+	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_Demo_ESItemType_Statics::Enumerators[] = {
 		{ "Weapon", (int64)Weapon },
 		{ "Armor", (int64)Armor },
 		{ "Consumable", (int64)Consumable },
 		{ "Material", (int64)Material },
 	};
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_Demo_EItemType_Statics::Enum_MetaDataParams[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_Demo_ESItemType_Statics::Enum_MetaDataParams[] = {
 		{ "Armor.Comment", "//\xe9\x98\xb2\xe5\x85\xb7\n" },
 		{ "Armor.DisplayName", "Armor" },
 		{ "Armor.Name", "Armor" },
@@ -64,25 +64,25 @@ void EmptyLinkFunctionForGeneratedCodeSInventoryEnum() {}
 		{ "Weapon.ToolTip", "\xe6\xad\xa6\xe5\x99\xa8" },
 	};
 #endif
-	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_Demo_EItemType_Statics::EnumParams = {
+	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_Demo_ESItemType_Statics::EnumParams = {
 		(UObject*(*)())Z_Construct_UPackage__Script_Demo,
 		nullptr,
-		"EItemType",
-		"EItemType",
-		Z_Construct_UEnum_Demo_EItemType_Statics::Enumerators,
-		UE_ARRAY_COUNT(Z_Construct_UEnum_Demo_EItemType_Statics::Enumerators),
+		"ESItemType",
+		"ESItemType",
+		Z_Construct_UEnum_Demo_ESItemType_Statics::Enumerators,
+		UE_ARRAY_COUNT(Z_Construct_UEnum_Demo_ESItemType_Statics::Enumerators),
 		RF_Public|RF_Transient|RF_MarkAsNative,
 		EEnumFlags::None,
 		(uint8)UEnum::ECppForm::Regular,
-		METADATA_PARAMS(Z_Construct_UEnum_Demo_EItemType_Statics::Enum_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UEnum_Demo_EItemType_Statics::Enum_MetaDataParams))
+		METADATA_PARAMS(Z_Construct_UEnum_Demo_ESItemType_Statics::Enum_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UEnum_Demo_ESItemType_Statics::Enum_MetaDataParams))
 	};
-	UEnum* Z_Construct_UEnum_Demo_EItemType()
+	UEnum* Z_Construct_UEnum_Demo_ESItemType()
 	{
-		if (!Z_Registration_Info_UEnum_EItemType.InnerSingleton)
+		if (!Z_Registration_Info_UEnum_ESItemType.InnerSingleton)
 		{
-			UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_EItemType.InnerSingleton, Z_Construct_UEnum_Demo_EItemType_Statics::EnumParams);
+			UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_ESItemType.InnerSingleton, Z_Construct_UEnum_Demo_ESItemType_Statics::EnumParams);
 		}
-		return Z_Registration_Info_UEnum_EItemType.InnerSingleton;
+		return Z_Registration_Info_UEnum_ESItemType.InnerSingleton;
 	}
 	void USInventoryEnum::StaticRegisterNativesUSInventoryEnum()
 	{
@@ -150,12 +150,12 @@ void EmptyLinkFunctionForGeneratedCodeSInventoryEnum() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Inventory_SInventoryEnum_h_Statics::EnumInfo[] = {
-		{ EItemType_StaticEnum, TEXT("EItemType"), &Z_Registration_Info_UEnum_EItemType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3513624848U) },
+		{ ESItemType_StaticEnum, TEXT("ESItemType"), &Z_Registration_Info_UEnum_ESItemType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 615398626U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Inventory_SInventoryEnum_h_Statics::ClassInfo[] = {
 		{ Z_Construct_UClass_USInventoryEnum, USInventoryEnum::StaticClass, TEXT("USInventoryEnum"), &Z_Registration_Info_UClass_USInventoryEnum, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USInventoryEnum), 3895850803U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Inventory_SInventoryEnum_h_2944870784(TEXT("/Script/Demo"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Inventory_SInventoryEnum_h_2824669352(TEXT("/Script/Demo"),
 		Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Inventory_SInventoryEnum_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Inventory_SInventoryEnum_h_Statics::ClassInfo),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Inventory_SInventoryEnum_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Inventory_SInventoryEnum_h_Statics::EnumInfo));

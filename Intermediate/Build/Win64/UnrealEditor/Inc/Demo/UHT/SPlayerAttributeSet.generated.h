@@ -18,12 +18,14 @@ struct FGameplayAttributeData;
 #define FID_ue_Demo_Source_Demo_PlayerCharacter_SPlayerAttributeSet_h_18_SPARSE_DATA
 #define FID_ue_Demo_Source_Demo_PlayerCharacter_SPlayerAttributeSet_h_18_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execOnRep_MoveSeep); \
 	DECLARE_FUNCTION(execOnRep_MaxPhysical); \
 	DECLARE_FUNCTION(execOnRep_Physical);
 
 
 #define FID_ue_Demo_Source_Demo_PlayerCharacter_SPlayerAttributeSet_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execOnRep_MoveSeep); \
 	DECLARE_FUNCTION(execOnRep_MaxPhysical); \
 	DECLARE_FUNCTION(execOnRep_Physical);
 
@@ -41,7 +43,8 @@ public: \
 		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
 		Physical=NETFIELD_REP_START, \
 		MaxPhysical, \
-		NETFIELD_REP_END=MaxPhysical	}; \
+		MoveSeep, \
+		NETFIELD_REP_END=MoveSeep	}; \
 	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 
 
@@ -57,7 +60,8 @@ public: \
 		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
 		Physical=NETFIELD_REP_START, \
 		MaxPhysical, \
-		NETFIELD_REP_END=MaxPhysical	}; \
+		MoveSeep, \
+		NETFIELD_REP_END=MoveSeep	}; \
 	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 
 

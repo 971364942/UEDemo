@@ -90,6 +90,8 @@ void USInteractableActorComponent::FindBestInteractable()
 	if (LastTickFocusedActor && FocusedActor != LastTickFocusedActor)
 	{
 		ServerLostFocusedActor(LastTickFocusedActor);
+
+		LastTickFocusedActor = nullptr;
 	}
 
 	if (FocusedActor)

@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "AbilitySystemComponent.h"
 #include "AttributeSet.h"
-#include "SAttributeSet.h"
+#include "Demo/GameplayAbility/SAttributeSet.h"
 #include "SPlayerAttributeSet.generated.h"
 
 
@@ -42,5 +42,11 @@ public:
 	void OnRep_MaxPhysical(const FGameplayAttributeData& OldValue);
 
 	FOnValueChanged OnPhysicalChanged;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="Attributes", ReplicatedUsing="OnRep_MoveSeep")
+	FGameplayAttributeData MoveSeep;
+	ATTRIBUTE_ACCESSORS(USPlayerAttributeSet, MoveSeep);
+	UFUNCTION()
+	void OnRep_MoveSeep(const FGameplayAttributeData& OldValue);
 	
 };

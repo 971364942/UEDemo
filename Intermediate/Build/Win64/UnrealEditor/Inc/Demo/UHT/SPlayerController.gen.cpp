@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Demo/Public/SPlayerController.h"
+#include "Demo/Framework/SPlayerController.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSPlayerController() {}
 // Cross Module References
@@ -39,8 +39,8 @@ void EmptyLinkFunctionForGeneratedCodeSPlayerController() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASPlayerController_Statics::Class_MetaDataParams[] = {
 		{ "Comment", "/**\n * \n */" },
 		{ "HideCategories", "Collision Rendering Transformation" },
-		{ "IncludePath", "SPlayerController.h" },
-		{ "ModuleRelativePath", "Public/SPlayerController.h" },
+		{ "IncludePath", "Framework/SPlayerController.h" },
+		{ "ModuleRelativePath", "Framework/SPlayerController.h" },
 	};
 #endif
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ASPlayerController_Statics::StaticCppClassTypeInfo = {
@@ -75,15 +75,15 @@ void EmptyLinkFunctionForGeneratedCodeSPlayerController() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ASPlayerController);
 	ASPlayerController::~ASPlayerController() {}
-	struct Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Public_SPlayerController_h_Statics
+	struct Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Framework_SPlayerController_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Public_SPlayerController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ASPlayerController, ASPlayerController::StaticClass, TEXT("ASPlayerController"), &Z_Registration_Info_UClass_ASPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASPlayerController), 4248545903U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Framework_SPlayerController_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_ASPlayerController, ASPlayerController::StaticClass, TEXT("ASPlayerController"), &Z_Registration_Info_UClass_ASPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASPlayerController), 1682020373U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Public_SPlayerController_h_2056426579(TEXT("/Script/Demo"),
-		Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Public_SPlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Public_SPlayerController_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Framework_SPlayerController_h_1856059463(TEXT("/Script/Demo"),
+		Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Framework_SPlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Framework_SPlayerController_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

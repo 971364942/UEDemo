@@ -21,6 +21,9 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category="Cooldowns")
 	FGameplayTagContainer CooldownTags;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Costs")
+	FScalableFloat ManaCost;
 	
 	UPROPERTY(Transient)
     FGameplayTagContainer TempCooldownTags;
@@ -28,4 +31,6 @@ public:
 	virtual const FGameplayTagContainer* GetCooldownTags() const override;
 
 	virtual void ApplyCooldown(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo) const override;
+
+	virtual UGameplayEffect* GetCostGameplayEffect() const override;
 };

@@ -7,7 +7,7 @@
 #include "SInventoryEnum.generated.h"
 
 UENUM(BlueprintType)
-enum EItemType
+enum ESItemType
 {
 	//武器
 	Weapon UMETA(DisplayName = "Weapon"),

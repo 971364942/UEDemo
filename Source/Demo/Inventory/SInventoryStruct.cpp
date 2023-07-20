@@ -3,20 +3,20 @@
 
 #include "SInventoryStruct.h"
 
-FItem::FItem()
+FSItem::FSItem()
 	: ID(0)
-	, Icon(nullptr)
+	, ItemIcon(nullptr)
 	, ItemType()
 {
 }
 
-FInventoryItem::FInventoryItem()
+FSInventoryItem::FSInventoryItem()
 	: ItemID(0)
 	, Quantity(0)
 	, InventoryIndex(0)
 {
 }
 
-FInventory::FInventory()
+FSInventory::FSInventory()
 {
 }

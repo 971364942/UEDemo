@@ -77,12 +77,34 @@ ADemoCharacter::ADemoCharacter()
 	AttackRange = 200.0f;
 }
 
+void ADemoCharacter::Tick(float DeltaSeconds)
+{
+	Super::Tick(DeltaSeconds);
+}
+
+void ADemoCharacter::Falling()
+{
+	Super::Falling();
+
+	AbilitySystem->AddLooseGameplayTag(FGameplayTag::RequestGameplayTag("State.Jump"));
+	AbilitySystem->RemoveLooseGameplayTag(FGameplayTag::RequestGameplayTag("State.Ground"));
+}
+
+void ADemoCharacter::Landed(const FHitResult& Hit)
+{
+	Super::Landed(Hit);
+
+	AbilitySystem->AddLooseGameplayTag(FGameplayTag::RequestGameplayTag("State.Ground"));
+	AbilitySystem->RemoveLooseGameplayTag(FGameplayTag::RequestGameplayTag("State.Jump"));
+}
+
 void ADemoCharacter::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
 
 	AttributeSet->OnHealthChanged.AddUObject(this, &ADemoCharacter::OnHealthChanged);
+	AttributeSet->OnPhysicalChanged.AddUObject(this, &ADemoCharacter::OnPhysicalChanged);
 
 	//Add Input Mapping Context
 	if (APlayerController* PlayerController = Cast<APlayerController>(Controller))
@@ -93,6 +115,13 @@ void ADemoCharacter::BeginPlay()
 		}
 	}
 
+	if (AbilitySystem)
+	{
+		AbilitySystem->GetGameplayAttributeValueChangeDelegate(USPlayerAttributeSet::GetMoveSeepAttribute()).AddUObject(this, &ADemoCharacter::OnMoveSpeedAttributeChanged);
+	}
+
+	AbilitySystem->AddLooseGameplayTag(FGameplayTag::RequestGameplayTag("State.Ground"));
+	
 	/*if (AbilitySystem)
 	{
 		if (MyAbilities.Num() > 0)
@@ -136,6 +165,7 @@ void ADemoCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInpu
 
 		//Moving
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &ADemoCharacter::Move);
+		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Completed, this, &ADemoCharacter::StopMove);
 
 		//Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ADemoCharacter::Look);
@@ -149,6 +179,8 @@ void ADemoCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInpu
 		EnhancedInputComponent->BindAction(SecondaryInteract, ETriggerEvent::Started, this, &ADemoCharacter::SecondaryInteractAction);
 
 		EnhancedInputComponent->BindAction(FunctionKey, ETriggerEvent::Started, this, &ADemoCharacter::Function);
+
+		EnhancedInputComponent->BindAction(DodgeAction, ETriggerEvent::Started, this, &ADemoCharacter::Dodge);
 	}
 }
 
@@ -170,9 +202,19 @@ void ADemoCharacter::Move(const FInputActionValue& Value)
 		const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 
 		// add movement 
-		AddMovementInput(ForwardDirection, MovementVector.Y);
+		AddMovementInput(ForwardDirection, MovementVector.Y);	
 		AddMovementInput(RightDirection, MovementVector.X);
+
+		if (!AbilitySystem->HasMatchingGameplayTag(FGameplayTag::RequestGameplayTag("State.Move")))
+		{
+			AbilitySystem->AddLooseGameplayTag(FGameplayTag::RequestGameplayTag("State.Move"));
+		}
 	}
+}
+
+void ADemoCharacter::StopMove()
+{
+	AbilitySystem->RemoveLooseGameplayTag(FGameplayTag::RequestGameplayTag("State.Move"));
 }
 
 void ADemoCharacter::Look(const FInputActionValue& Value)
@@ -282,6 +324,8 @@ void ADemoCharacter::StopBlock()
 void ADemoCharacter::PrimaryInteractAction()
 {
 	InteractableActorComp->PrimaryInteract();
+
+	OnPrimaryInteract.Broadcast();
 }
 
 void ADemoCharacter::SecondaryInteractAction()
@@ -293,17 +337,32 @@ void ADemoCharacter::Function()
 {
 }
 
+void ADemoCharacter::Dodge()
+{
+	if (AbilitySystem)
+	{
+		if (ensure(GA_Dodge))
+		{
+			AbilitySystem->TryActivateAbilityByClass(GA_Dodge);
+		}
+	}
+}
 
-void ADemoCharacter::OnHealthChanged(AActor* SInstigator)
+void ADemoCharacter::OnMoveSpeedAttributeChanged(const FOnAttributeChangeData& Data)
+{
+	UCharacterMovementComponent* MovementPtr =  Cast<UCharacterMovementComponent>(GetCharacterMovement());
+	MovementPtr->MaxWalkSpeed = Data.NewValue;
+}
+
+void ADemoCharacter::OnHealthChanged(AActor* SInstigator, float ChangeHealth)
 {
 	K2_OnHealthChanged(SInstigator);
 }
 
-void ADemoCharacter::OnPhysicalChanged()
+void ADemoCharacter::OnPhysicalChanged(AActor* SInstigator, float ChangePhysical)
 {
 	K2_OnPhysicalChanged();
 }
-
 
 void ADemoCharacter::SetAttackMultiplier(float AttackMultiplier)
 {
