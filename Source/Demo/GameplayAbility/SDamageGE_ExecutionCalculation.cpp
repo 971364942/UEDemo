@@ -82,7 +82,7 @@ void USDamageGE_ExecutionCalculation::Execute_Implementation(const FGameplayEffe
 
 	if (TargetTags->HasTag(FGameplayTag::RequestGameplayTag("Ability.Buff.TimeStop")))
 	{
-		DamageDone = 2.0f;
+		DamageDone *= 2.0f;
 	}
 	
 	DamageDone = FMath::RoundToInt(DamageDone);
