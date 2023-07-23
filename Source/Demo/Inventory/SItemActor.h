@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "SItemActor.generated.h"
 
+class UDataTable;
 class USWorldUserWidget;
 class UBoxComponent;
 
@@ -43,6 +44,9 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UBoxComponent* BoxCollisionComp;
+
+	UPROPERTY(BlueprintReadWrite,EditDefaultsOnly, Category="Item")
+	UDataTable* TaskTable;
 
 	UFUNCTION()
 	void PickUp();

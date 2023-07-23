@@ -39,7 +39,7 @@ void ASItemActor::BeginPlay()
 	ItemMeshComp->SetStaticMesh(nullptr);
 	ItemMeshComp->SetRelativeScale3D(FVector(1));
 
-	FSItem Item = USGameplayFunctionLibrary::GetItemBy_ID(ItemID);
+	FSItem Item = USGameplayFunctionLibrary::GetItemBy_ID(ItemID, TaskTable);
 	if (Item)
 	{
 		BoxCollisionComp->SetGenerateOverlapEvents(true);

@@ -1,0 +1,23 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\ue\\demo\\source\\demo\\interactable\\sinteractablecharacter.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\ue\\demo\\intermediate\\build\\win64\\demoeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\ue\\demo\\intermediate\\build\\win64\\unrealeditor\\development\\demo\\definitions.demo.h",
+            "c:\\ue\\demo\\source\\demo\\interactable\\sinteractablecharacter.h",
+            "c:\\ue\\demo\\source\\demo\\interactable\\sinteractableinterface.h",
+            "c:\\ue\\demo\\intermediate\\build\\win64\\unrealeditor\\inc\\demo\\uht\\sinteractableinterface.generated.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\charactermovementreplication.generated.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\rootmotionsource.generated.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\character.generated.h",
+            "c:\\ue\\demo\\intermediate\\build\\win64\\unrealeditor\\inc\\demo\\uht\\sinteractablecharacter.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

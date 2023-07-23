@@ -56,13 +56,13 @@ void USGameplayFunctionLibrary::SetOnCompletionChange(FOnCompletionChange OnComp
 	CompletionChange = OnCompletionChange;
 }
 
-void USGameplayFunctionLibrary::SetTableTaskCompletionByID(int TableID, bool IsCompletion)
+void USGameplayFunctionLibrary::SetTableTaskCompletionByID(int TableID, bool IsCompletion, UDataTable* TaskTable)
 {
 	FName TableName = FName(*FString::Printf(TEXT("%d"), TableID));
 
-	FString TaskTablePath = TEXT("/Game/MyDemo/BluePrints/Task/DT_Task");
-	UDataTable* TaskTable = LoadObject<UDataTable>(nullptr, *TaskTablePath);
-
+	// FString TaskTablePath = TEXT("/Game/MyDemo/BluePrints/Task/DT_Task");
+	// UDataTable* TaskTable = LoadObject<UDataTable>(nullptr, *TaskTablePath);
+	
 	const UScriptStruct* RowStruct = TaskTable->GetRowStruct();
 
 	TArray<FName> RowNames = TaskTable->GetRowNames();
@@ -102,12 +102,12 @@ void USGameplayFunctionLibrary::SetTableTaskCompletionByID(int TableID, bool IsC
 	}
 }
 
-FSItem USGameplayFunctionLibrary::GetItemBy_ID(int ItemID)
+FSItem USGameplayFunctionLibrary::GetItemBy_ID(int ItemID, UDataTable* TaskTable)
 {
 	FName ItemName = FName(*FString::Printf(TEXT("%d"), ItemID));
 	
-	FString TaskTablePath = TEXT("/Game/MyDemo/BluePrints/Inventory/DT_Items");
-	const UDataTable* TaskTable = LoadObject<UDataTable>(nullptr, *TaskTablePath);
+	// FString TaskTablePath = TEXT("/Game/MyDemo/BluePrints/Inventory/DT_Items");
+	// const UDataTable* TaskTable = LoadObject<UDataTable>(nullptr, *TaskTablePath);
 
 	const FSItem* Item = TaskTable->FindRow<FSItem>(ItemName, "");
 	

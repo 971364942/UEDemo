@@ -1,0 +1,7 @@
+Binaries/Win64/Demo-Win64-Shipping.pdb filter=lfs diff=lfs merge=lfs -text
+Saved/StagedBuilds/Windows/Demo/Binaries/Win64/Demo-Win64-Shipping.exe filter=lfs diff=lfs merge=lfs -text
+Saved/StagedBuilds/Windows/Demo/Content/Paks/Demo-Windows.ucas filter=lfs diff=lfs merge=lfs -text
+Intermediate/Build/Win64/DemoEditor/Development/Engine/SharedPCH.Engine.ShadowErrors.h.pch filter=lfs diff=lfs merge=lfs -text
+git filter=lfs diff=lfs merge=lfs -text
+lfs filter=lfs diff=lfs merge=lfs -text
+track filter=lfs diff=lfs merge=lfs -text

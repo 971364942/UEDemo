@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\ue\\demo\\intermediate\\build\\win64\\unrealeditor\\inc\\demo\\uht\\sinteractableactorcomponent.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\ue\\demo\\intermediate\\build\\win64\\demoeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\ue\\demo\\intermediate\\build\\win64\\unrealeditor\\development\\demo\\definitions.demo.h",
+            "c:\\ue\\demo\\source\\demo\\interactable\\sinteractableactorcomponent.h",
+            "c:\\ue\\demo\\intermediate\\build\\win64\\unrealeditor\\inc\\demo\\uht\\sinteractableactorcomponent.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -18,6 +18,7 @@ void EmptyLinkFunctionForGeneratedCodeSItemActor() {}
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
@@ -294,6 +295,10 @@ void EmptyLinkFunctionForGeneratedCodeSItemActor() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_BoxCollisionComp_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_BoxCollisionComp;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_TaskTable_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_TaskTable;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -365,6 +370,13 @@ void EmptyLinkFunctionForGeneratedCodeSItemActor() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASItemActor_Statics::NewProp_BoxCollisionComp = { "BoxCollisionComp", nullptr, (EPropertyFlags)0x00200800000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ASItemActor, BoxCollisionComp), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASItemActor_Statics::NewProp_BoxCollisionComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASItemActor_Statics::NewProp_BoxCollisionComp_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASItemActor_Statics::NewProp_TaskTable_MetaData[] = {
+		{ "Category", "Item" },
+		{ "ModuleRelativePath", "Inventory/SItemActor.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASItemActor_Statics::NewProp_TaskTable = { "TaskTable", nullptr, (EPropertyFlags)0x0020080000010005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ASItemActor, TaskTable), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASItemActor_Statics::NewProp_TaskTable_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASItemActor_Statics::NewProp_TaskTable_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASItemActor_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASItemActor_Statics::NewProp_ItemID,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASItemActor_Statics::NewProp_PickRange,
@@ -373,6 +385,7 @@ void EmptyLinkFunctionForGeneratedCodeSItemActor() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASItemActor_Statics::NewProp_WidgetOffset,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASItemActor_Statics::NewProp_ItemMeshComp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASItemActor_Statics::NewProp_BoxCollisionComp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASItemActor_Statics::NewProp_TaskTable,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ASItemActor_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ASItemActor>::IsAbstract,
@@ -411,9 +424,9 @@ void EmptyLinkFunctionForGeneratedCodeSItemActor() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ASItemActor, ASItemActor::StaticClass, TEXT("ASItemActor"), &Z_Registration_Info_UClass_ASItemActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASItemActor), 43987454U) },
+		{ Z_Construct_UClass_ASItemActor, ASItemActor::StaticClass, TEXT("ASItemActor"), &Z_Registration_Info_UClass_ASItemActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASItemActor), 2300162170U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_2123306236(TEXT("/Script/Demo"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_1266187030(TEXT("/Script/Demo"),
 		Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

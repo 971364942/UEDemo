@@ -30,10 +30,10 @@ public:
 	static void SetOnCompletionChange(FOnCompletionChange OnCompletionChange);
 	
 	UFUNCTION(BlueprintCallable, Category="DataTable")
-	static void SetTableTaskCompletionByID(int TableID, bool IsCompletion);
+	static void SetTableTaskCompletionByID(int TableID, bool IsCompletion, UDataTable* TaskTable);
 
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category="Inventory")
-	static FSItem GetItemBy_ID(int ItemID);
+	static FSItem GetItemBy_ID(int ItemID, UDataTable* TaskTable);
 	
 	
 }; 

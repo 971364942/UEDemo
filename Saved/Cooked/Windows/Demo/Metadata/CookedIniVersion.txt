@@ -1,4 +1,5 @@
 [UsedSettings]
+Windows.Game:/Script/UnrealEd.ProjectPackagingSettings:bDeterministicShaderCodeOrder:0=False
 Windows.Game:/Script/Engine.AssetManagerSettings:PrimaryAssetTypesToScan:0=(PrimaryAssetType="Map",AssetBaseClass=/Script/Engine.World,bHasBlueprintClasses=False,bIsEditorOnly=True,Directories=((Path="/Game/Maps")),SpecificAssets=,Rules=(Priority=-1,ChunkId=-1,bApplyRecursively=True,CookRule=Unknown))
 Windows.Game:/Script/Engine.AssetManagerSettings:PrimaryAssetTypesToScan:1=(PrimaryAssetType="PrimaryAssetLabel",AssetBaseClass=/Script/Engine.PrimaryAssetLabel,bHasBlueprintClasses=False,bIsEditorOnly=True,Directories=((Path="/Game")),SpecificAssets=,Rules=(Priority=-1,ChunkId=-1,bApplyRecursively=True,CookRule=Unknown))
 Windows.Engine:AssetRegistry:CookedTagsBlacklist:0=(Class=/Script/Engine.Blueprint,Tag=FiB)
@@ -17,9 +18,9 @@ Windows.Engine:AssetRegistry:bFilterAssetDataWithNoTags:0=false
 Windows.Engine:AssetRegistry:bFilterDependenciesWithNoTags:0=false
 Windows.Engine:AssetRegistry:bFilterSearchableNames:0=true
 Windows.Engine:/Script/EngineSettings.GameMapsSettings:GameInstanceClass:0=/Game/MyDemo/BluePrints/Framework/BP_GameInstance.BP_GameInstance_C
-Windows.Engine:/Script/EngineSettings.GameMapsSettings:GameDefaultMap:0=/Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap
-Windows.Engine:/Script/EngineSettings.GameMapsSettings:ServerDefaultMap:0=/Engine/Maps/Entry
-Windows.Engine:/Script/EngineSettings.GameMapsSettings:GlobalDefaultGameMode:0=/Script/Demo.DemoGameMode
+Windows.Engine:/Script/EngineSettings.GameMapsSettings:GameDefaultMap:0=/Game/MyDemo/Maps/Map_Begin.Map_Begin
+Windows.Engine:/Script/EngineSettings.GameMapsSettings:ServerDefaultMap:0=None
+Windows.Engine:/Script/EngineSettings.GameMapsSettings:GlobalDefaultGameMode:0=/Game/MyDemo/BluePrints/Framework/BP_GAS_GameMode.BP_GAS_GameMode_C
 Windows.Engine:Core.System:CanUseUnversionedPropertySerialization:0=True
 Windows.Input:/Script/Engine.InputSettings:DefaultTouchInterface:0=/Engine/MobileResources/HUD/DefaultVirtualJoysticks.DefaultVirtualJoysticks
 Editor:/Script/UnrealEd.UnrealEdOptions:bExpandClassPickerClassList:0=False
@@ -44,6 +45,26 @@ Editor:/Script/UnrealEd.ActorFactoryPointLight:MenuPriority:0=19
 Editor:/Script/UnrealEd.ActorFactorySpotLight:MenuPriority:0=19
 Editor:/Script/UnrealEd.ActorFactorySkeletalMesh:MenuPriority:0=13
 Editor:/Script/UnrealEd.ActorFactoryAmbientSound:MenuPriority:0=11
+Editor:BlueprintEditor.Favorites:DefaultProfile:0=StarterProfile
+Editor:BlueprintEditor.Favorites:StarterProfile:0=(NodeName="/Script/BlueprintGraph.K2Node_Event", FieldName="/Script/Engine.ActorReceiveBeginPlay")
+Editor:BlueprintEditor.Favorites:StarterProfile:1=(NodeName="/Script/BlueprintGraph.K2Node_Event", FieldName="/Script/Engine.ActorReceiveTick")
+Editor:BlueprintEditor.Favorites:StarterProfile:2=(NodeName="/Script/BlueprintGraph.K2Node_CallFunction", FieldName="/Script/Engine.GameplayStaticsGetPlayerPawn")
+Editor:BlueprintEditor.Favorites:StarterProfile:3=(NodeName="/Script/BlueprintGraph.K2Node_IfThenElse")
+Editor:BlueprintEditor.Favorites:StarterProfile:4=(NodeName="/Script/BlueprintGraph.K2Node_CallFunction", FieldName="/Script/Engine.ActorGetTransform")
+Editor:BlueprintEditor.Favorites:StarterProfile:5=(NodeName="/Script/BlueprintGraph.K2Node_CallFunction", FieldName="/Script/Engine.ActorK2_DestroyActor")
+Editor:BlueprintEditor.Favorites:StarterProfile:6=(NodeName="/Script/BlueprintGraph.K2Node_CallFunction", FieldName="/Script/Engine.GameplayStaticsGetAllActorsOfClass")
+Editor:BlueprintEditor.Favorites:StarterProfile:7=(NodeName="/Script/BlueprintGraph.K2Node_SpawnActorFromClass")
+Editor:BlueprintEditor.Favorites:StarterProfile:8=(NodeName="/Script/BlueprintGraph.K2Node_PromotableOperator")
+Editor:BlueprintEditor.Favorites:StarterProfile:9=(FieldName="/Script/TimeManagement.TimeManagementBlueprintLibraryAdd_FrameNumberInteger",NodeName="/Script/BlueprintGraph.K2Node_PromotableOperator")
+Editor:BlueprintEditor.Favorites:StarterProfile:10=(FieldName="/Script/TimeManagement.TimeManagementBlueprintLibrarySubtract_FrameNumberInteger",NodeName="/Script/BlueprintGraph.K2Node_PromotableOperator")
+Editor:BlueprintEditor.Favorites:StarterProfile:11=(FieldName="/Script/GameplayTags.BlueprintGameplayTagLibraryEqualEqual_GameplayTagContainer",NodeName="/Script/BlueprintGraph.K2Node_PromotableOperator")
+Editor:BlueprintEditor.Favorites:StarterProfile:12=(FieldName="/Script/TimeManagement.TimeManagementBlueprintLibraryDivide_FrameNumberInteger",NodeName="/Script/BlueprintGraph.K2Node_PromotableOperator")
+Editor:BlueprintEditor.Favorites:StarterProfile:13=(FieldName="/Script/Engine.KismetMathLibraryGreater_TimespanTimespan",NodeName="/Script/BlueprintGraph.K2Node_PromotableOperator")
+Editor:BlueprintEditor.Favorites:StarterProfile:14=(FieldName="/Script/Engine.KismetMathLibraryGreaterEqual_TimespanTimespan",NodeName="/Script/BlueprintGraph.K2Node_PromotableOperator")
+Editor:BlueprintEditor.Favorites:StarterProfile:15=(FieldName="/Script/Engine.KismetMathLibraryLess_TimespanTimespan",NodeName="/Script/BlueprintGraph.K2Node_PromotableOperator")
+Editor:BlueprintEditor.Favorites:StarterProfile:16=(FieldName="/Script/Engine.KismetMathLibraryLessEqual_TimespanTimespan",NodeName="/Script/BlueprintGraph.K2Node_PromotableOperator")
+Editor:BlueprintEditor.Favorites:StarterProfile:17=(FieldName="/Script/GameplayTags.BlueprintGameplayTagLibraryNotEqual_GameplayTagContainer",NodeName="/Script/BlueprintGraph.K2Node_PromotableOperator")
+Editor:BlueprintEditor.Favorites:StarterProfile:18=(FieldName="/Script/TimeManagement.TimeManagementBlueprintLibraryMultiply_SecondsFrameRate",NodeName="/Script/BlueprintGraph.K2Node_PromotableOperator")
 Editor:UserDefinedStructure:bUseUserDefinedStructure:0=true
 Editor:CustomBlueprintFunctionLibrary:bCanCreateNew:0=true
 Editor:StructSerialization:SkipByteCodeSerialization:0=true
@@ -135,6 +156,8 @@ Engine:Core.System:TestUnversionedPropertySerializationWhenCooking:0=False
 Engine:Core.System:DetailedCallstacksInNonMonolithicBuilds:0=True
 Engine:Core.System:UsePackageTrailer:0=True
 Engine:Core.System:HangDuration:0=0.0
+Engine:Core.System:AssetLogShowsDiskPath:0=True
+Engine:Core.System:AssetLogShowsAbsolutePath:0=True
 Engine:/Script/UdpMessaging.UdpMessagingSettings:EnabledByDefault:0=False
 Engine:/Script/UdpMessaging.UdpMessagingSettings:EnableTransport:0=True
 Engine:/Script/UdpMessaging.UdpMessagingSettings:bAutoRepair:0=True
@@ -151,9 +174,9 @@ Engine:/Script/UdpMessaging.UdpMessagingSettings:TunnelUnicastEndpoint:0=
 Engine:/Script/UdpMessaging.UdpMessagingSettings:TunnelMulticastEndpoint:0=
 Engine:/Script/EngineSettings.GameMapsSettings:GameInstanceClass:0=/Game/MyDemo/BluePrints/Framework/BP_GameInstance.BP_GameInstance_C
 Engine:/Script/EngineSettings.GameMapsSettings:EditorStartupMap:0=/Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap
-Engine:/Script/EngineSettings.GameMapsSettings:GameDefaultMap:0=/Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap
-Engine:/Script/EngineSettings.GameMapsSettings:ServerDefaultMap:0=/Engine/Maps/Entry
-Engine:/Script/EngineSettings.GameMapsSettings:GlobalDefaultGameMode:0=/Script/Demo.DemoGameMode
+Engine:/Script/EngineSettings.GameMapsSettings:GameDefaultMap:0=/Game/MyDemo/Maps/Map_Begin.Map_Begin
+Engine:/Script/EngineSettings.GameMapsSettings:ServerDefaultMap:0=None
+Engine:/Script/EngineSettings.GameMapsSettings:GlobalDefaultGameMode:0=/Game/MyDemo/BluePrints/Framework/BP_GAS_GameMode.BP_GAS_GameMode_C
 Engine:/Script/EngineSettings.GameMapsSettings:LocalMapOptions:0=
 Engine:InstallBundleManager:EditorModuleName:0=NullInstallBundleManager
 Engine:URL:Protocol:0=unreal
@@ -479,7 +502,7 @@ Engine:/Script/OnlineSubsystemUtils.SpectatorBeaconHost:TravelSessionTimeoutSecs
 Engine:InstalledDerivedDataBackendGraph:Root:0=(Type=KeyLength, Length=120, Inner=AsyncPut)
 Engine:InstalledDerivedDataBackendGraph:AsyncPut:0=(Type=AsyncPut, Inner=Hierarchy)
 Engine:InstalledDerivedDataBackendGraph:Hierarchy:0=(Type=Hierarchical, Inner=Pak, Inner=CompressedPak, Inner=EnginePak, Inner=EnterprisePak, Inner=Local, Inner=Shared)
-Engine:InstalledDerivedDataBackendGraph:Local:0=(Type=FileSystem, PurgeTransient=true, UnusedFileAge=34, Path="%GAMEDIR%DerivedDataCache", EnvPathOverride=UE-LocalDataCachePath, EditorOverrideSetting=LocalDerivedDataCache)
+Engine:InstalledDerivedDataBackendGraph:Local:0=(Type=FileSystem, PurgeTransient=true, UnusedFileAge=34, Path="%ENGINEVERSIONAGNOSTICUSERDIR%DerivedDataCache", EnvPathOverride=UE-LocalDataCachePath, EditorOverrideSetting=LocalDerivedDataCache)
 Engine:InstalledDerivedDataBackendGraph:Shared:0=(Type=FileSystem, UnusedFileAge=10, FoldersToClean=10, ConsiderSlowAt=70, Path=?EpicDDC, EnvPathOverride=UE-SharedDataCachePath, EditorOverrideSetting=SharedDerivedDataCache, CommandLineOverride=SharedDataCachePath)
 Engine:InstalledDerivedDataBackendGraph:Pak:0=(Type=ReadPak, Filename="%GAMEDIR%DerivedDataCache/DDC.ddp")
 Engine:InstalledDerivedDataBackendGraph:CompressedPak:0=(Type=ReadPak, Filename="%GAMEDIR%DerivedDataCache/Compressed.ddp", Compressed=true)
@@ -564,14 +587,19 @@ Engine:/Script/UnrealEd.CookerSettings:VersionedIntRValues:10=r.Shaders.Optimize
 Engine:/Script/UnrealEd.CookerSettings:VersionedIntRValues:11=r.CompileShadersForDevelopment
 Engine:/Script/UnrealEd.CookerSettings:VersionedIntRValues:12=r.MobileHDR
 Engine:/Script/UnrealEd.CookerSettings:VersionedIntRValues:13=r.UsePreExposure
+Engine:/Script/UnrealEd.CookerSettings:bCookOnTheFlyForLaunchOn:0=False
 Engine:/Script/Engine.PhysicsSettings:DefaultGravityZ:0=-980.0
 Engine:/Script/Engine.PhysicsSettings:bEnable2DPhysics:0=false
 Engine:/Script/WindowsTargetPlatform.WindowsTargetSettings:bEnableDistanceFields:0=true
 Engine:/Script/WindowsTargetPlatform.WindowsTargetSettings:bEnableRayTracing:0=true
-Engine:/Script/WindowsTargetPlatform.WindowsTargetSettings:DefaultGraphicsRHI:0=DefaultGraphicsRHI_DX12
-Engine:/Script/WindowsTargetPlatform.WindowsTargetSettings:D3D12TargetedShaderFormats:0=PCD3D_SM6
+Engine:/Script/WindowsTargetPlatform.WindowsTargetSettings:DefaultGraphicsRHI:0=DefaultGraphicsRHI_Default
+Engine:/Script/WindowsTargetPlatform.WindowsTargetSettings:D3D12TargetedShaderFormats:0=PCD3D_SM5
+Engine:/Script/WindowsTargetPlatform.WindowsTargetSettings:D3D12TargetedShaderFormats:1=PCD3D_SM6
+Engine:/Script/WindowsTargetPlatform.WindowsTargetSettings:D3D12TargetedShaderFormats:2=PCD3D_ES31
 Engine:/Script/WindowsTargetPlatform.WindowsTargetSettings:D3D11TargetedShaderFormats:0=PCD3D_SM5
-Engine:/Script/WindowsTargetPlatform.WindowsTargetSettings:Compiler:0=Default
+Engine:/Script/WindowsTargetPlatform.WindowsTargetSettings:D3D11TargetedShaderFormats:1=PCD3D_ES31
+Engine:/Script/WindowsTargetPlatform.WindowsTargetSettings:VulkanTargetedShaderFormats:0=SF_VULKAN_SM5
+Engine:/Script/WindowsTargetPlatform.WindowsTargetSettings:Compiler:0=VisualStudio2022
 Engine:/Script/WindowsTargetPlatform.WindowsTargetSettings:AudioSampleRate:0=48000
 Engine:/Script/WindowsTargetPlatform.WindowsTargetSettings:AudioCallbackBufferFrameSize:0=1024
 Engine:/Script/WindowsTargetPlatform.WindowsTargetSettings:AudioNumBuffersToEnqueue:0=1
@@ -657,13 +685,33 @@ Engine:/Script/AndroidFileServerEditor.AndroidFileServerRuntimeSettings:bReportS
 Engine:/Script/AndroidFileServerEditor.AndroidFileServerRuntimeSettings:ConnectionType:0=USBOnly
 Engine:/Script/AndroidFileServerEditor.AndroidFileServerRuntimeSettings:bUseManualIPAddress:0=False
 Engine:/Script/AndroidFileServerEditor.AndroidFileServerRuntimeSettings:ManualIPAddress:0=
-Game:/Script/UnrealEd.ProjectPackagingSettings:PerPlatformBuildConfig:0=()
-Game:/Script/UnrealEd.ProjectPackagingSettings:PerPlatformTargetFlavorName:0=(("Android", "Android_ASTC"))
-Game:/Script/UnrealEd.ProjectPackagingSettings:PerPlatformBuildTarget:0=()
+Game:/Script/UnrealEd.ProjectPackagingSettings:StagingDirectory:0=(Path="C/aaa/Windows")
+Game:/Script/UnrealEd.ProjectPackagingSettings:BuildConfiguration:0=PPBC_Shipping
+Game:/Script/UnrealEd.ProjectPackagingSettings:FullRebuild:0=False
+Game:/Script/UnrealEd.ProjectPackagingSettings:UsePakFile:0=True
+Game:/Script/UnrealEd.ProjectPackagingSettings:bUseIoStore:0=True
+Game:/Script/UnrealEd.ProjectPackagingSettings:bCompressed:0=True
+Game:/Script/UnrealEd.ProjectPackagingSettings:PackageCompressionFormat:0=Oodle
+Game:/Script/UnrealEd.ProjectPackagingSettings:PackageCompressionMethod:0=Kraken
+Game:/Script/UnrealEd.ProjectPackagingSettings:PackageCompressionLevel_Distribution:0=7
+Game:/Script/UnrealEd.ProjectPackagingSettings:PackageCompressionLevel_TestShipping:0=5
+Game:/Script/UnrealEd.ProjectPackagingSettings:PackageCompressionLevel_DebugDevelopment:0=4
+Game:/Script/UnrealEd.ProjectPackagingSettings:PackageCompressionMinBytesSaved:0=1024
+Game:/Script/UnrealEd.ProjectPackagingSettings:PackageCompressionMinPercentSaved:0=5
+Game:/Script/UnrealEd.ProjectPackagingSettings:bForceUseProjectCompressionFormatIgnoreHardwareOverride:0=False
+Game:/Script/UnrealEd.ProjectPackagingSettings:bGenerateChunks:0=False
+Game:/Script/UnrealEd.ProjectPackagingSettings:bChunkHardReferencesOnly:0=False
+Game:/Script/UnrealEd.ProjectPackagingSettings:IncludePrerequisites:0=True
+Game:/Script/UnrealEd.ProjectPackagingSettings:IncludeCrashReporter:0=False
+Game:/Script/UnrealEd.ProjectPackagingSettings:InternationalizationPreset:0=English
+Game:/Script/UnrealEd.ProjectPackagingSettings:bSkipEditorContent:0=False
+Game:/Script/UnrealEd.ProjectPackagingSettings:bSharedMaterialNativeLibraries:0=True
+Game:/Script/UnrealEd.ProjectPackagingSettings:bShareMaterialShaderCode:0=True
+Game:/Script/UnrealEd.ProjectPackagingSettings:bSkipMovies:0=False
+Game:/Script/UnrealEd.ProjectPackagingSettings:WriteBackMetadataToAssetRegistry:0=Disabled
 Game:/Script/UnrealEd.ProjectPackagingSettings:Build:0=IfProjectHasCode
 Game:/Script/UnrealEd.ProjectPackagingSettings:BuildTarget:0=
 Game:/Script/UnrealEd.ProjectPackagingSettings:LaunchOnTarget:0=
-Game:/Script/UnrealEd.ProjectPackagingSettings:StagingDirectory:0=(Path="")
 Game:/Script/UnrealEd.ProjectPackagingSettings:ForDistribution:0=False
 Game:/Script/UnrealEd.ProjectPackagingSettings:IncludeDebugFiles:0=False
 Game:/Script/UnrealEd.ProjectPackagingSettings:BlueprintNativizationMethod:0=Disabled
@@ -686,29 +734,9 @@ Game:/Script/UnrealEd.ProjectPackagingSettings:ApplocalPrerequisitesDirectory:0=
 Game:/Script/UnrealEd.ProjectPackagingSettings:LocalizationTargetCatchAllChunkId:0=0
 Game:/Script/UnrealEd.ProjectPackagingSettings:bCookAll:0=False
 Game:/Script/UnrealEd.ProjectPackagingSettings:bCookMapsOnly:0=False
-Game:/Script/UnrealEd.ProjectPackagingSettings:BuildConfiguration:0=PPBC_Development
-Game:/Script/UnrealEd.ProjectPackagingSettings:FullRebuild:0=False
-Game:/Script/UnrealEd.ProjectPackagingSettings:UsePakFile:0=True
-Game:/Script/UnrealEd.ProjectPackagingSettings:bUseIoStore:0=True
-Game:/Script/UnrealEd.ProjectPackagingSettings:bCompressed:0=True
-Game:/Script/UnrealEd.ProjectPackagingSettings:PackageCompressionFormat:0=Oodle
-Game:/Script/UnrealEd.ProjectPackagingSettings:PackageCompressionMethod:0=Kraken
-Game:/Script/UnrealEd.ProjectPackagingSettings:PackageCompressionLevel_Distribution:0=7
-Game:/Script/UnrealEd.ProjectPackagingSettings:PackageCompressionLevel_TestShipping:0=5
-Game:/Script/UnrealEd.ProjectPackagingSettings:PackageCompressionLevel_DebugDevelopment:0=4
-Game:/Script/UnrealEd.ProjectPackagingSettings:PackageCompressionMinBytesSaved:0=1024
-Game:/Script/UnrealEd.ProjectPackagingSettings:PackageCompressionMinPercentSaved:0=5
-Game:/Script/UnrealEd.ProjectPackagingSettings:bForceUseProjectCompressionFormatIgnoreHardwareOverride:0=False
-Game:/Script/UnrealEd.ProjectPackagingSettings:bGenerateChunks:0=False
-Game:/Script/UnrealEd.ProjectPackagingSettings:bChunkHardReferencesOnly:0=False
-Game:/Script/UnrealEd.ProjectPackagingSettings:IncludePrerequisites:0=True
-Game:/Script/UnrealEd.ProjectPackagingSettings:IncludeCrashReporter:0=False
-Game:/Script/UnrealEd.ProjectPackagingSettings:InternationalizationPreset:0=English
-Game:/Script/UnrealEd.ProjectPackagingSettings:bSkipEditorContent:0=false
-Game:/Script/UnrealEd.ProjectPackagingSettings:bSharedMaterialNativeLibraries:0=True
-Game:/Script/UnrealEd.ProjectPackagingSettings:bShareMaterialShaderCode:0=True
-Game:/Script/UnrealEd.ProjectPackagingSettings:bSkipMovies:0=False
-Game:/Script/UnrealEd.ProjectPackagingSettings:WriteBackMetadataToAssetRegistry:0=Disabled
+Game:/Script/UnrealEd.ProjectPackagingSettings:PerPlatformBuildConfig:0=(("Windows", PPBC_Shipping),("TVOS", PPBC_DebugGame))
+Game:/Script/UnrealEd.ProjectPackagingSettings:PerPlatformTargetFlavorName:0=(("Android", "Android_ASTC"))
+Game:/Script/UnrealEd.ProjectPackagingSettings:PerPlatformBuildTarget:0=()
 Game:Internationalization:LocalizationPaths:0=%GAMEDIR%Content/Localization/Game
 Game:/Script/Engine.GameNetworkManager:TotalNetBandwidth:0=32000
 Game:/Script/Engine.GameNetworkManager:MaxDynamicBandwidth:0=7000
@@ -1269,6 +1297,10 @@ ShaderFormat:PCD3D_SM6:VersionNumber=2056272690
 ShaderFormat:PCD3D_SM5:VersionNumber=165125214
 ShaderFormat:PCD3D_ES31:VersionNumber=12
 ShaderFormat:D3D_ES3_1_HOLOLENS:VersionNumber=12
+ShaderFormat:SF_VULKAN_SM5:VersionNumber=1614270690
+ShaderFormat:SF_VULKAN_ES31_ANDROID:VersionNumber=1614270690
+ShaderFormat:SF_VULKAN_ES31:VersionNumber=1614270690
+ShaderFormat:SF_VULKAN_SM5_ANDROID:VersionNumber=1614270690
 Release:9C54D522A8264FBE9421074661B482D0=44
 Dev-Blueprints:B0D832E41F894F0DACCF7EB736FD4AA2=10
 Dev-Build:E1C64328A22C4D53A36C8E866417BD8C=0

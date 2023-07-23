@@ -17,24 +17,24 @@ struct FHitResult;
 #endif
 #define DEMO_SItemActor_generated_h
 
-#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_SPARSE_DATA
-#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_RPC_WRAPPERS \
+#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_SPARSE_DATA
+#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execHidePickupTipsWidget); \
 	DECLARE_FUNCTION(execShowPickupTipsWidget); \
 	DECLARE_FUNCTION(execPickUp);
 
 
-#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execHidePickupTipsWidget); \
 	DECLARE_FUNCTION(execShowPickupTipsWidget); \
 	DECLARE_FUNCTION(execPickUp);
 
 
-#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_ACCESSORS
-#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_CALLBACK_WRAPPERS
-#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_INCLASS_NO_PURE_DECLS \
+#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_ACCESSORS
+#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_CALLBACK_WRAPPERS
+#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASItemActor(); \
 	friend struct Z_Construct_UClass_ASItemActor_Statics; \
@@ -43,7 +43,7 @@ public: \
 	DECLARE_SERIALIZER(ASItemActor)
 
 
-#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_INCLASS \
+#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_INCLASS \
 private: \
 	static void StaticRegisterNativesASItemActor(); \
 	friend struct Z_Construct_UClass_ASItemActor_Statics; \
@@ -52,7 +52,7 @@ public: \
 	DECLARE_SERIALIZER(ASItemActor)
 
 
-#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_STANDARD_CONSTRUCTORS \
+#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ASItemActor(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ASItemActor) \
@@ -66,7 +66,7 @@ public: \
 	NO_API virtual ~ASItemActor();
 
 
-#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_ENHANCED_CONSTRUCTORS \
+#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ASItemActor(ASItemActor&&); \
@@ -78,29 +78,29 @@ public: \
 	NO_API virtual ~ASItemActor();
 
 
-#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_13_PROLOG
-#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_GENERATED_BODY_LEGACY \
+#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_14_PROLOG
+#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_SPARSE_DATA \
-	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_RPC_WRAPPERS \
-	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_ACCESSORS \
-	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_CALLBACK_WRAPPERS \
-	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_INCLASS \
-	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_STANDARD_CONSTRUCTORS \
+	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_SPARSE_DATA \
+	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_RPC_WRAPPERS \
+	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_ACCESSORS \
+	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_CALLBACK_WRAPPERS \
+	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_INCLASS \
+	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_GENERATED_BODY \
+#define FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_SPARSE_DATA \
-	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_ACCESSORS \
-	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_CALLBACK_WRAPPERS \
-	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_INCLASS_NO_PURE_DECLS \
-	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_16_ENHANCED_CONSTRUCTORS \
+	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_SPARSE_DATA \
+	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_ACCESSORS \
+	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_CALLBACK_WRAPPERS \
+	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_INCLASS_NO_PURE_DECLS \
+	FID_ue_Demo_Source_Demo_Inventory_SItemActor_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

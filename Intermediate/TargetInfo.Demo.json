@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Demo",
+			"Path": "C:\\ue\\Demo\\Source\\Demo.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "DemoEditor",
+			"Path": "C:\\ue\\Demo\\Source\\DemoEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
